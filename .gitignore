@@ -1,0 +1,73 @@
+# ---- LaTeX build artifacts ----
+*.aux
+*.log
+*.out
+*.toc
+*.lof
+*.lot
+*.loa
+*.lol
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+*.synctex(busy)
+*.pre
+*.xdv
+*.dvi
+*.ps
+
+# Bibliography
+*.bbl
+*.blg
+*.bcf
+*.run.xml
+
+# Index / glossary / nomenclature
+*.idx
+*.ilg
+*.ind
+*.glg
+*.glo
+*.gls
+*.glsdefs
+*.acn
+*.acr
+*.alg
+*.nlo
+*.nls
+
+# TikZ externalization, minted, todonotes
+*.auxlock
+*.dpth
+*.md5
+*.figlist
+_minted*/
+*.pyg
+*.tdo
+
+# Asymptote (evan.sty pulls this in for diagrams).
+# Only the generated per-figure files -- hand-written .asy sources stay tracked.
+*-[0-9]*.asy
+*-[0-9]*.eps
+*.prc
+
+# ---- Compiled output ----
+# PDFs built from our own .tex sources are reproducible, so they stay untracked.
+# The negations below keep course-provided handouts, which have no .tex source.
+*.pdf
+!mit18_100b_*.pdf
+!**/handouts/**
+!**/readings/**
+
+# ---- Editor / OS ----
+.vscode/
+.idea/
+out/
+.DS_Store
+Thumbs.db
+desktop.ini
+$RECYCLE.BIN/
+*~
+*.swp
+*.bak
+*.tmp
