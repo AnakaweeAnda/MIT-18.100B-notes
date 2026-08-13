@@ -54,7 +54,6 @@ _minted*/
 # ---- Compiled output ----
 # PDFs built from our own .tex sources are reproducible, so they stay untracked.
 # The negations below keep course-provided handouts, which have no .tex source.
-*.pdf
 !mit18_100b_*.pdf
 !**/handouts/**
 !**/readings/**
