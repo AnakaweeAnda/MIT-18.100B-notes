@@ -7,8 +7,6 @@
 %          hints, british, nothm, nofancy, ... (see the top of evan.sty)
 \usepackage[sexy]{evan}
 
-\newcommand{\MM}{\mathbb M}
-
 \title{Problem set 2 solution}
 \author{Anakawee Chujinda}
 
@@ -21,89 +19,64 @@
 \newpage
 
 \section{Problems Set 2}
-\begin{problem}[10pt]
-  Let $\FF$ be an ordered field with $1 \neq 0$. Show that $1 > 0$.
-  \emph{Hint: show $(-1)(-1) = 1$ first.}
-\end{problem}
-
-\begin{problem}[10pt]
-  Recall that two rational numbers $\frac{n_1}{m_1}$ and $\frac{n_2}{m_2}$ are the same,
-  denoted by $\frac{n_1}{m_1} = \frac{n_2}{m_2}$, if $n_1 m_2 = n_2 m_1$.
-  Show that the addition
-  \[
-    \frac{n}{m} + \frac{p}{q} := \frac{nq + mp}{mq}
-  \]
-  is well-defined. That is, if $\frac{n_1}{m_1} = \frac{n_2}{m_2}$ and
-  $\frac{p_1}{q_1} = \frac{p_2}{q_2}$, then
-  \[
-    \frac{n_1}{m_1} + \frac{p_1}{q_1} = \frac{n_2}{m_2} + \frac{p_2}{q_2}.
-  \]
-\end{problem}
-\begin{problem}[10pt]
-  Find $\sup E$ and $\inf E$ for the following sets $E$:
+\begin{problem}[25pt]
+  Let $a_n$ and $b_n$ be a sequence of real numbers.
   \begin{enumerate}
-    \item $E = \{ n \in \ZZ \mid n < \sqrt{12} \}$
-    \item $E = \{ r \in \QQ \mid r < \sqrt{12} \}$
-    \item $E = \{ x \in \RR \mid x^2 - x - 1 < 0 \}$
-    \item $E = \left\{ \frac{n^2+n}{n^2+1} \;\middle|\; n \in \NN \right\}$
+    \item Assume that $\lim_{n \to \infty} a_n$ and $\lim_{n \to \infty} b_n$ exist. Show that
+      \[
+        \lim_{n \to \infty} (a_n b_n)
+        = \left( \lim_{n \to \infty} a_n \right) \left( \lim_{n \to \infty} b_n \right).
+      \]
+    \item Give an example in which $\lim_{n \to \infty} (a_n b_n)$ exists but neither
+      $\lim_{n \to \infty} a_n$ nor $\lim_{n \to \infty} b_n$ exists.
   \end{enumerate}
-  No proof is needed for the answer.
 \end{problem}
 
-\begin{problem}[10pt]
-  Let $\MM$ be the set of polynomials with integer coefficients,
-  \[
-    \MM := \{ f(x) = a_0 + a_1 x + a_2 x^2 + \dots + a_n x^n \mid a_i \in \ZZ \}.
-  \]
-  Define the relation $0 \prec f$ if $0 < f(x)$ for $x$ large enough. To be more precise,
-  we say $0 \prec f$ if there exists $M > 0$ such that $f(x) > 0$ for all $x > M$.
-  Then define $f \prec g$ if $0 \prec g - f$.
-  Show that $(\MM, \prec)$ is an ordered set.
-
-  You can use the following fact directly (without proving it): if
-  $f(x) = a_0 + a_1 x + a_2 x^2 + \dots + a_n x^n$ with $0 < a_n$, then $0 < f(x)$ for
-  $x$ large enough.
+\begin{problem}[25pt]
+  Find the limit for the following sequence if it exists. Or show that the limit doesn't
+  exist.
+  \begin{enumerate}
+    \item $a_n = \dfrac{n^2}{n+1} - \dfrac{n^2+1}{n}$
+    \item $a_n = \dfrac{\sin(n)}{n}$
+    \item \[
+        a_n = \underbrace{\frac{n^2}{\sqrt{n^6+1}} + \frac{n^2}{\sqrt{n^6+2}}
+          + \frac{n^2}{\sqrt{n^6+3}} + \dots + \frac{n^2}{\sqrt{n^6+n}}}_{n \text{ terms}}
+      \]
+  \end{enumerate}
 \end{problem}
 
-\begin{problem}[10pt]
-  Let $(\MM, \prec)$ be the ordered set defined in Problem 4.
-  Show that $(\MM, \prec)$ \textbf{doesn't} satisfy the Archimedean property.
-\end{problem}
-
-\newpage
-\begin{problem}[10pt]
-  The greatest lower bound of a set $E$ is defined to be the number $\beta$ which has the
-  following properties:
+\begin{problem}[15pt]
+  Let $a_n$ be a sequence of real numbers and $L$ be a real number. Show that the following
+  two statements are equivalent. One holds if and only if the other does.
   \begin{itemize}
-    \item For all $x \in E$, $\beta \le x$.
-    \item Suppose $\alpha \le x$ for all $x \in E$. Then $\beta \ge \alpha$.
+    \item There exists a subsequence $a_{n_k}$ converging to $L$.
+    \item For any $\epsilon > 0$, there exist infinite any $a_n$ in $(L - \epsilon, L + \epsilon)$.
   \end{itemize}
-  Show that for any non-empty set $E \subset \RR$ which is bounded from below, $E$ has the
-  greatest lower bound.
 \end{problem}
-\begin{proof}
-  Let $F = \{-x \mid x \in E \} \subset \RR$, then $F$ is bounded from above, let $a = \sup F$ $\therefore -x \geq a$ so that $x \geq -a$ for all $x \in E$, then $-a$ is the lower bound of $E$.
 
-  Assume that there are $b$ such that $b$ is the lower bound of $E$. $\therefore x \geq b \Longrightarrow -x \leq -b$ then $-b$ is the upper bound of $F$. Since $a = \sup F$ then $a \leq -b$ then $-a \geq b$. Then $-a$ is the greater upper bound of $E$. therefore, $E$ has largest lower bound.
+\begin{proof} (Forward direction)
+  $\Longrightarrow$ Assume that there exists subsequence $a_{n_k}$ such that $a_{n_k} \rightarrow L$. 
+  Then for any $\epsilon > 0$, there exists positive integer $K$ such that for all $k \geq K$ $$|a_{n_k} - L| < \epsilon$$
+  then $L-\epsilon < a_{n_k} < L+\epsilon$ for all $k \geq K$. There are infinitely many $a_n$ such that $a_n \in (L-\epsilon,L+\epsilon)$ for all $\epsilon > 0$ 
 \end{proof}
 
-\begin{problem}[20pt]
-  Show that for all real numbers $x \in \RR$, there exists a real number $y \in \RR$ such
-  that $y^3 = x$. \emph{Hint: start with the case $x > 0$.}
-\end{problem}
-\begin{proof}
-  WLOG, we let $x > 0$ Let $A = \{a \subset \RR \mid 0 < a^3 < x\} \subseteq \RR$ since $A$ is bounded, there the there's a $\sup$.
-  Let $y = \sup A$, we'll show that $y^3 = x$.
-
-  Assume that $y^3 > x$, choose $h > 0$ such that $0 < h < \dfrac{y^3-x}{3y^2}$. therefore
-  \[
-  (y-h)^3 = y^3 - 3y^2h + 3yh^2 - h^3 > x
-  \]
-  so that $y-h$ is upper bound of $A$ but it contradicts that $y$ is smallest.
-  
-  Assume that $y^3 < x$, we choose $0 < h < 1$ such that $h < \dfrac{x-y^3}{3y^2 + 3y + 1}$ so that $(y+h)^3 < x$ then $y + h \in A$. Therefore, $y > y + h$ which impossible.
-
-  Hence $y^3 = x$
+\begin{proof} (Backward direction)
+  $\Longleftarrow$ Assume that for all $\epsilon > 0$ there exists infinite $a_n$ such that $a_n \in (L-\epsilon,L+\epsilon)$
+ then for each $k \in \NN$ there are infinitely many $i$ such that $a_i \in (L-\frac1k,L+\frac1k)$ then for each $k$, we choose $n_k$ such that $n_k > n_{k-1}$ and $|a_{n_k}-L| \leq \frac1k$
+ for each $\epsilon > 0$ there exists some integer $K$ such that $K > \frac1\epsilon$ (Archimedean Property) so that for all $k \geq K$ 
+ \[
+ |a_{n_k} - L| \leq \frac1k \leq \frac1K  < \epsilon
+ \]
+ Hence, the subsequence $a_{n_k}$ converges to $L$
 \end{proof}
+\begin{problem}[15pt]
+  Where possible find a subsequence that is monotone and a subsequence that is convergent
+  for the following sequences.
+  \begin{enumerate}
+    \item $a_n = \sin(n\pi/8)$
+    \item $a_n = (-1)^n n$
+  \end{enumerate}
+\end{problem}
+
 
 \end{document}
